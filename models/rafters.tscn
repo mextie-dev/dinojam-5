@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvuhb36ujuuje"]
+
+[ext_resource type="Material" uid="uid://dl38jkxf15q6n" path="res://materials/darker_wood_sized.tres" id="1_63u2c"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_037kk"]
+top_radius = 0.11
+bottom_radius = 0.11
+radial_segments = 4
+
+[node name="Rafters" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.60621774, -0.5, 0, 0.35, 0.8660254, 0, 0, 0)
+material_override = ExtResource("1_63u2c")
+mesh = SubResource("CylinderMesh_037kk")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.60621774, -0.5, 0, 0.35, 0.8660254, 1, 0, 0)
+material_override = ExtResource("1_63u2c")
+mesh = SubResource("CylinderMesh_037kk")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.60621774, -0.5, 0, 0.35, 0.8660254, -1, 0, 0)
+material_override = ExtResource("1_63u2c")
+mesh = SubResource("CylinderMesh_037kk")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.60621774, -0.5, 0, 0.35, 0.8660254, 2, 0, 0)
+material_override = ExtResource("1_63u2c")
+mesh = SubResource("CylinderMesh_037kk")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.60621774, -0.5, 0, 0.35, 0.8660254, -2, 0, 0)
+material_override = ExtResource("1_63u2c")
+mesh = SubResource("CylinderMesh_037kk")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.60621774, -0.5, 0, 0.35, 0.8660254, 3, 0, 0)
+material_override = ExtResource("1_63u2c")
+mesh = SubResource("CylinderMesh_037kk")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.60621774, -0.5, 0, 0.35, 0.8660254, -3, 0, 0)
+material_override = ExtResource("1_63u2c")
+mesh = SubResource("CylinderMesh_037kk")
