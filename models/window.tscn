@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk3q0frwub6od"]
+
+[ext_resource type="Texture2D" uid="uid://blxy0e4cm36en" path="res://textures/window.png" id="1_q7fks"]
+
+[node name="Sprite3D" type="Sprite3D"]
+pixel_size = 0.1
+texture_filter = 0
+texture = ExtResource("1_q7fks")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+light_bake_mode = 1

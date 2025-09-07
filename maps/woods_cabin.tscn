@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://bte4orxyfmv5g"]
+[gd_scene load_steps=23 format=3 uid="uid://bte4orxyfmv5g"]
 
 [ext_resource type="PackedScene" uid="uid://c3b5deomsdvx3" path="res://characters/player.tscn" id="1_n53n7"]
 [ext_resource type="Material" uid="uid://cqcfn7v68dx2b" path="res://materials/dark_wood.tres" id="2_frg84"]
 [ext_resource type="Material" uid="uid://ktjgu2e4oelg" path="res://materials/light_wood.tres" id="3_jq4mg"]
+[ext_resource type="PackedScene" uid="uid://djfkpilmqikle" path="res://models/door.tscn" id="4_2ggm8"]
 [ext_resource type="PackedScene" uid="uid://dpmekd16l0nov" path="res://models/table.tscn" id="4_54f8b"]
 [ext_resource type="PackedScene" uid="uid://cvuhb36ujuuje" path="res://models/rafters.tscn" id="5_ne5x2"]
 [ext_resource type="PackedScene" uid="uid://cu4786ypu7aaw" path="res://models/lamp.tscn" id="6_frg84"]
@@ -10,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://2e3mdd2lqlhf" path="res://models/trash_bag.tscn" id="8_n7ohm"]
 [ext_resource type="PackedScene" uid="uid://bwh3l1wiyda1a" path="res://models/fireplace.tscn" id="9_4m2se"]
 [ext_resource type="PackedScene" uid="uid://doopjsl6s8p5i" path="res://models/stairs.tscn" id="10_38r0y"]
+[ext_resource type="PackedScene" uid="uid://ba6skhqj0vrcq" path="res://models/bedroll.tscn" id="11_hrtig"]
+[ext_resource type="PackedScene" uid="uid://bk3q0frwub6od" path="res://models/window.tscn" id="12_gvo2g"]
 
 [sub_resource type="Environment" id="Environment_n53n7"]
 background_mode = 1
@@ -191,6 +194,9 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Construction/MeshInstance3D11/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_sjqhw")
 
+[node name="Door" parent="Construction/MeshInstance3D11/StaticBody3D" instance=ExtResource("4_2ggm8")]
+transform = Transform3D(1.6194693, 1.3113416e-07, 8.742278e-08, 1.415785e-07, -1.5, 7.642742e-15, 1.415785e-07, 0, -1, 18.009716, 3.3695636, -10.3506)
+
 [node name="MeshInstance3D12" type="MeshInstance3D" parent="Construction"]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -5, -8.5, 22)
 mesh = SubResource("BoxMesh_a2rmu")
@@ -205,7 +211,6 @@ shape = SubResource("ConcavePolygonShape3D_sjqhw")
 transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, -22, -8.5, 10)
 material_override = ExtResource("3_jq4mg")
 mesh = SubResource("BoxMesh_a2rmu")
-metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Construction/MeshInstance3D13"]
 
@@ -343,6 +348,16 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Construction/MeshInstance3D19/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_4m2se")
 
+[node name="MeshInstance3D20" type="MeshInstance3D" parent="Construction"]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, -10, 15.067589, 10)
+material_override = ExtResource("3_jq4mg")
+mesh = SubResource("BoxMesh_a2rmu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Construction/MeshInstance3D20"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Construction/MeshInstance3D20/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_sjqhw")
+
 [node name="Props" type="Node3D" parent="."]
 
 [node name="Table" parent="Props" instance=ExtResource("4_54f8b")]
@@ -365,3 +380,46 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4193883, 0.28462687, -8.033
 
 [node name="Stairs" parent="Props" instance=ExtResource("10_38r0y")]
 transform = Transform3D(-1.6168647, 0, 1.0620291e-07, 0, 1.2651184, 0, -1.413508e-07, 0, -1.2148197, 6.052124, 0.35, 2.7737708)
+
+[node name="Bedroll" parent="Props" instance=ExtResource("11_hrtig")]
+transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, -2.7550418, -0.021805368, 8.000647)
+
+[node name="Bedroll2" parent="Props" instance=ExtResource("11_hrtig")]
+transform = Transform3D(0.6455376, 0, -0.7637285, 0, 1, 0, 0.7637285, 0, 0.6455376, 7.3562136, -0.02180513, -6.1397486)
+
+[node name="Bedroll3" parent="Props" instance=ExtResource("11_hrtig")]
+transform = Transform3D(0.6455376, 0, -0.7637285, 0, 1, 0, 0.7637285, 0, 0.6455376, 5.3506823, -0.0043884143, 7.9328003)
+
+[node name="TrashBag2" parent="Props" instance=ExtResource("8_n7ohm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7315407, 0.17271593, 5.764849)
+
+[node name="TrashBag3" parent="Props" instance=ExtResource("8_n7ohm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.159668, -0.12691888, 5.595838)
+
+[node name="Bedroll4" parent="Props" instance=ExtResource("11_hrtig")]
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -4.7117124, 0.10249988, -1.5954394)
+
+[node name="Sprite3D" parent="Props" instance=ExtResource("12_gvo2g")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 9.474855, 2.157628, -1.1751887)
+pixel_size = 0.0535
+
+[node name="SpotLight3D" parent="Props/Sprite3D" index="0"]
+light_color = Color(0.4392157, 0.6627451, 0.67058825, 1)
+light_energy = 1.5
+spot_range = 11.752
+spot_angle = 85.19
+spot_angle_attenuation = 0.9659369
+
+[node name="Sprite3D2" parent="Props" instance=ExtResource("12_gvo2g")]
+transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, -5.0046945, 2.067537, -4.414053)
+pixel_size = 0.0535
+
+[node name="SpotLight3D" parent="Props/Sprite3D2" index="0"]
+light_color = Color(0.4392157, 0.6627451, 0.67058825, 1)
+light_energy = 1.5
+spot_range = 11.752
+spot_angle = 85.19
+spot_angle_attenuation = 0.9659369
+
+[editable path="Props/Sprite3D"]
+[editable path="Props/Sprite3D2"]
