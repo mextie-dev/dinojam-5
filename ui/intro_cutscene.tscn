@@ -1,6 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://4d3gkr4o7054"]
+[gd_scene load_steps=6 format=3 uid="uid://4d3gkr4o7054"]
 
 [ext_resource type="LabelSettings" uid="uid://bx3c4w8qsebkn" path="res://ui/fonts/fontsee.tres" id="1_bo22l"]
+[ext_resource type="Script" uid="uid://b8qobnul7txte" path="res://scripts/intro_cutscene.gd" id="1_f2jt3"]
+
+[sub_resource type="Animation" id="Animation_f2jt3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_bo22l"]
 resource_name = "intro"
@@ -30,33 +58,6 @@ tracks/1/keys = {
 "values": [false, true, false]
 }
 
-[sub_resource type="Animation" id="Animation_f2jt3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Label2:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1mhbu"]
 _data = {
 &"RESET": SubResource("Animation_f2jt3"),
@@ -64,6 +65,7 @@ _data = {
 }
 
 [node name="IntroCutscene" type="Node2D"]
+script = ExtResource("1_f2jt3")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = -1
@@ -78,9 +80,8 @@ offset_left = -1.0
 offset_top = 29.0
 offset_right = 160.0
 offset_bottom = 116.0
-text = "woods of
-washington state"
-label_settings = ExtResource("1_bo22l")
+text = "60 miles north of
+seattle, washington"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
@@ -98,3 +99,4 @@ horizontal_alignment = 1
 libraries = {
 &"": SubResource("AnimationLibrary_1mhbu")
 }
+autoplay = "intro"
